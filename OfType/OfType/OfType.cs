@@ -12,9 +12,10 @@ namespace OfType
         public IEnumerable<T> GetOfType<T>(IEnumerable enumerable)
         {
             List<T> result = new List<T>();
+
             foreach (var item in enumerable)
             {
-                if (item.GetType() == typeof(T))
+                if (item is T)
                 {
                     result.Add((T)item);
 
@@ -29,5 +30,9 @@ namespace OfType
             return GetOfType<TOutput>(enumerable);
         }
 
+        public IEnumerable<TBase> OfBase<TBase, TDerived>(IEnumerable<TDerived> derivedItems) where TDerived : TBase
+        {
+            return GetOfType<TDerived, TBase>(derivedItems);
+        }
     }
 }
