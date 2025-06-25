@@ -23,5 +23,11 @@ namespace OfType
 
             return result;
         }
+
+        public IEnumerable<TOutput> GetOfType<TSource, TOutput>(IEnumerable<TSource> enumerable)
+        {
+            return GetOfType<TOutput>(enumerable);
+        }
+
     }
 }

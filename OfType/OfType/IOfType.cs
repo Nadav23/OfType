@@ -13,6 +13,6 @@ namespace OfType
 
         IEnumerable<TOutput> GetOfType<TSource, TOutput>(IEnumerable<TSource> enumerable);
 
-        IEnumerable<TBase> OfBase<TBase, TDerived>(IEnumerable<TDerived> derivedItems) where TDerived : TBase;
+        //IEnumerable<TBase> OfBase<TBase, TDerived>(IEnumerable<TDerived> derivedItems) where TDerived : TBase;
     }
 }
