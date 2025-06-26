@@ -32,7 +32,7 @@ namespace OfType
 
         public IEnumerable<TBase> OfBase<TBase, TDerived>(IEnumerable<TDerived> derivedItems) where TDerived : TBase
         {
-            return GetOfType<TDerived, TBase>(derivedItems);
+            return derivedItems as IEnumerable<TBase>;
         }
     }
 }
